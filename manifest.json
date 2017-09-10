@@ -1,0 +1,28 @@
+{
+    "name": "gbook下载助手",
+    "description": "gbook下载助手",
+    "default_locale": "zh_CN",
+    "version": "1.0.0",
+    "content_scripts": [{
+        "run_at": "document_end",
+        "matches": ["*://books.google.co.jp/*", "*://books.google.de/*", "*://books.google.co.kr/*"],
+        "js": ["javascript/filesaver.min.js", "javascript/underscore-min.js", "javascript/jquery.min.js", "javascript/content.js"]
+    }],
+    "icons": {
+        "48": "images/icon-48.png",
+        "16": "images/icon-16.png"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "https://books.google.com/*",
+        "https://books.google.co.kr/*"
+    ],
+    "browser_action": {
+        "default_title": "__MSG_title__",
+        "default_icon": { // optional
+            "16": "images/icon-16.png" // optional
+        }
+    },
+    "manifest_version": 2
+}
